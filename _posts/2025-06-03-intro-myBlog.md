@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "my first post on 3rd june"
+title: "Be my Guest !"
 date: 2025-06-03 12:00:00 +0200
 ---
 
