@@ -1,0 +1,24 @@
+---
+layout: default
+title: "Welcome to Luigi's Blog"
+---
+
+# Welcome to Luigi's Blog!
+
+This site is powered by Jekyll and the Architect theme.
+
+## Latest Posts
+
+<ul>
+  {% for post in site.posts limit:5 %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <span style="font-size:0.9em; color:#888;">{{ post.date | date: "%B %d, %Y" }}</span>
+      <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+    </li>
+  {% endfor %}
+</ul>
+
+---
+
+Explore my thoughts on AI, Data Science, and Technology below!

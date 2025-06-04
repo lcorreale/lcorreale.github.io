@@ -3,22 +3,62 @@ layout: default
 title: "Welcome to Luigi's Blog"
 ---
 
-# Welcome to Luigi's Blog!
+<!-- Banner or main image at the top -->
+<img src="/assets/images/banner.jpg" alt="Banner" style="width:70%; max-height:300px; object-fit:cover; border-radius:8px; margin-bottom:1.5em;">
 
-This site is powered by Jekyll and the Architect theme.
+<h1>Welcome to Luigi's Blog</h1>
+<p>Thoughts on AI, Data Science, and Technology</p>
 
-## Latest Posts
-
-<ul>
-  {% for post in site.posts limit:5 %}
+<!-- Timeline of posts -->
+<ul class="timeline">
+  {% for post in site.posts %}
     <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span style="font-size:0.9em; color:#888;">{{ post.date | date: "%B %d, %Y" }}</span>
-      <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+      <div class="timeline-date">{{ post.date | date: "%B %d, %Y" }}</div>
+      <div class="timeline-content">
+        <a href="{{ post.url | relative_url }}"><strong>{{ post.title }}</strong></a>
+        <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+        <a href="{{ post.url | relative_url }}#reply" class="reply-btn">Reply</a>
+      </div>
     </li>
   {% endfor %}
 </ul>
 
----
+<style>
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 2em 0 0 0;
+}
+.timeline li {
+  margin-bottom: 2em;
+  padding-left: 1em;
+  border-left: 3px solid #333;
+  position: relative;
+}
+.timeline-date {
+  font-size: 0.95em;
+  color: #888;
+  margin-bottom: 0.3em;
+}
+.timeline-content {
+  background: #f8f8f8;
+  padding: 0.8em 1em;
+  border-radius: 6px;
+  margin-left: -1em;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+.reply-btn {
+  display: inline-block;
+  margin-top: 0.5em;
+  color: #fff;
+  background: #007acc;
+  padding: 0.25em 0.9em;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+.reply-btn:hover {
+  background: #005fa3;
+}
+</style>
 
-Explore my thoughts on AI, Data Science, and Technology below!
