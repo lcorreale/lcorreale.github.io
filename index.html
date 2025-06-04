@@ -17,7 +17,6 @@ title: "Welcome to Luigi's Blog"
       <div class="timeline-content">
         <a href="{{ post.url | relative_url }}"><strong>{{ post.title }}</strong></a>
         <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
-        <a href="{{ post.url | relative_url }}#reply" class="reply-btn">Reply</a>
       </div>
     </li>
   {% endfor %}
@@ -47,18 +46,6 @@ title: "Welcome to Luigi's Blog"
   margin-left: -1em;
   box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 }
-.reply-btn {
-  display: inline-block;
-  margin-top: 0.5em;
-  color: #fff;
-  background: #007acc;
-  padding: 0.25em 0.9em;
-  border-radius: 3px;
-  text-decoration: none;
-  font-size: 0.9em;
-}
-.reply-btn:hover {
-  background: #005fa3;
-}
+
 </style>
 
